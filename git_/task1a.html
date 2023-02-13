@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>when u click on below button the below paragraph will be changed </p>
+    <p id ="para" >I am sample paragraph </p>
+    <button onclick ="change_text()">Click me</button>
+    <script>
+        function change_text(){
+            document.getElementById("para").innerHTML="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, labore beatae vel, obcaecati nemo ab consequatur qui totam optio neque laboriosam distinctio expedita, repellat recusandae esse possimus rerum non eligendi."
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task3</title>
+
+    <style>
+       input[type=submit] {
+            color:rgb(252, 253, 253);
+            background-color: rgb(87, 55, 14);
+            border-radius: 10px;
+            padding:10px;
+            border:none;
+        }
+
+    </style>
+
+    <script>
+        function Create_table(){
+            var rows = prompt("enter number of rows");
+            var cols = prompt("enter number of columns");
+            if(rows==0||rows==""||rows=="null"){
+                rows=10;
+            }
+            if(cols==0||cols==""||cols=="null"){
+               cols=10;
+            }
+            var i ,j=1;
+            var output = "<table border='3' width='100' cellspacing = '5'cellpadding = '5'align = 'center' >";
+                for(i=1;i<=rows;i++){
+                    output=output+"<tr>";
+                        for(j=1;j<=cols;j++){
+                            output=output+"<td>" + i*j +"</td>";
+                        }
+                        output = output+"</tr>";       
+                }
+                output=output+"</table>";
+                document.write(output);
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <table id = "mytable"></table>
+    <form id="form">
+        <input type="submit" onclick="Create_table()" value="Create Table">
+    </form>
+</center>
+</body>
+</html>

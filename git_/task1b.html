@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1b</title>
+    <style>
+        body{
+            background-color: rgb(142, 241, 248);
+        }
+        button{
+            color: rgb(18, 3, 40);
+            padding: 10px 10px 10px 10px;
+            background-color: antiquewhite;
+            font-size: larger;
+            border-radius: 15px;
+        }
+        h2{
+            box-sizing: border-box;
+            background-color: blanchedalmond;
+            width:fit-content;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+     
+    </style>
+</head>
+<body>
+    <center>
+      
+        <h2>Click on the button to change image</h2>
+   
+        <img src="image1.jpg" id = "img1" height="300px">
+    
+        <br>
+        <br>
+     
+        <button onclick="image_func()">click me</button>
+ 
+    </center>
+    <script>
+        function image_func(){
+            var x=document.getElementById("img1");
+            if(x.src.match("image1.jpg"))
+            x.src="image2.jpg";
+            else if(x.src.match("image2.jpg"))
+            x.src="image3.jpg";
+            else
+            x.src="image1.jpg";
+        }
+    </script>
+</body>
+</html>

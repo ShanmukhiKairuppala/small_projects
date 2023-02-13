@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2</title>
+    <style>
+        body{
+            background-color: rgb(223, 207, 124);
+        }
+    </style>
+    <script>
+        function validate_form(){
+            var name1 = document.getElementById("fname").value;
+            var name2 = document.getElementById("lname").value;
+            var emailid = document.getElementById("email").value;
+            var pass = document.getElementById("pwd").value;
+            var conpass = document.getElementById("cpwd").value;
+            var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+
+            if(name1==""){
+              console.log("1");
+                document.getElementById("fmsg").innerHTML="**fill the first name";
+                return false;
+            }
+            if(name2==""){
+              console.log("2");
+                document.getElementById("fmsg").innerHTML="";
+                document.getElementById("lmsg").innerHTML="**fill the last name";
+                return false;
+            }
+            if(emailid==""){
+               console.log("3");
+                document.getElementById("lmsg").innerHTML="";
+                document.getElementById("emsg").innerHTML="**fill the email id";
+                return false;
+            }
+            if(emailid.match(regex )){
+                console.log("6");
+                document.getElementById("emsg").innerHTML="";
+            }else{
+                document.getElementById("emsg").innerHTML="please enter valid email id";
+                return false;
+            }
+            if(pass==""){
+               console.log("4");
+                document.getElementById("emsg").innerHTML="";
+                document.getElementById("pmsg").innerHTML="**fill your password";
+                return false;
+            }
+            if(conpass==""){
+               console.log("5");
+                document.getElementById("pmsg").innerHTML="";
+                document.getElementById("cpmsg").innerHTML="**fill the confirm password";
+                return false;
+            }
+            
+            if(pass!==conpass){
+                console.log("7");
+                document.getElementById("cpmsg").innerHTML="incorrect passwords";
+                return false;
+            }
+            else{
+                document.getElementById("cpmsg").innerHTML="";
+                alert("data entered correctly");
+                document.write("javascript form has been submitted.");
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <h1>Form Validation</h1>
+    <br>
+    <form onsubmit="return validate_form()">
+    <table>
+        <tr>
+            <td><label>FIRST NAME</label></td>
+            <td><input type ="text" id = "fname" value=""></td>
+            <td><p id = "fmsg"style="color:red"></p></td>
+        </tr>
+        <tr>
+            <td><label>LAST NAME</label></td>
+            <td><input type ="text" id = "lname" value=""></td>
+            <td><p id = "lmsg"style="color:red"></p></td>
+        </tr>
+        <tr>
+            <td><label>EMAIL</label></td>
+            <td><input type ="email" id = "email" value=""></td>
+            <td><p id = "emsg"style="color:red"></p></td>
+        </tr>
+        <tr>
+            <td><label>PASSWORD</label></td>
+            <td><input type ="password" id = "pwd" value=""></td>
+            <td><p id = "pmsg"style="color:red"></p></td>
+        </tr>
+        <tr>
+            <td><label>CONFIRM PASSWORD</label></td>
+            <td><input type ="password" id = "cpwd" value=""></td>
+            <td><p id = "cpmsg"style="color:red"></p></td>
+        </tr>
+    </table>
+       <br>
+          <input type ="submit"value="Submit">
+        </form>
+   
+</center>
+</body>
+</html>
